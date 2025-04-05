@@ -1,0 +1,11 @@
+/Users/utkarshpadia/Desktop/StockGlide/stockglide-backend/target/debug/deps/liburl-2316aeeab641b998.rmeta: /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/lib.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/host.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/origin.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/parser.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/path_segments.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/slicing.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/quirks.rs
+
+/Users/utkarshpadia/Desktop/StockGlide/stockglide-backend/target/debug/deps/url-2316aeeab641b998.d: /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/lib.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/host.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/origin.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/parser.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/path_segments.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/slicing.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/quirks.rs
+
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/lib.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/host.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/origin.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/parser.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/path_segments.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/slicing.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/url-2.5.4/src/quirks.rs:

@@ -1,0 +1,11 @@
+/Users/utkarshpadia/Desktop/StockGlide/stockglide-backend/target/debug/deps/libsocket2-364b8d0179c7af15.rmeta: /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/lib.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockaddr.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/socket.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockref.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sys/unix.rs
+
+/Users/utkarshpadia/Desktop/StockGlide/stockglide-backend/target/debug/deps/libsocket2-364b8d0179c7af15.rlib: /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/lib.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockaddr.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/socket.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockref.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sys/unix.rs
+
+/Users/utkarshpadia/Desktop/StockGlide/stockglide-backend/target/debug/deps/socket2-364b8d0179c7af15.d: /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/lib.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockaddr.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/socket.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockref.rs /Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sys/unix.rs
+
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/lib.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockaddr.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/socket.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sockref.rs:
+/Users/utkarshpadia/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.9/src/sys/unix.rs:
