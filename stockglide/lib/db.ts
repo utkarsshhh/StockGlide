@@ -1,7 +1,9 @@
 export const db = {
     users: new Map<string, any>(),
     
+    
     async createUser(userData: any): Promise<any> {
+
       const id = Math.random().toString(36).substring(2, 15);
       const user = {
         id,
@@ -13,6 +15,7 @@ export const db = {
     },
     
     async getUserByEmail(email: string): Promise<any | null> {
+        console.log(this.users)
       for (const user of this.users.values()) {
         if (user.email === email) return user;
       }

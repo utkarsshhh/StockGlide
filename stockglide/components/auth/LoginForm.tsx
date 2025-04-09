@@ -7,12 +7,14 @@ import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import { LoginCredentials } from '@/types/user';
 
+
 const LoginForm: React.FC = () => {
   const router = useRouter();
   const [credentials, setCredentials] = useState<LoginCredentials>({
     email: '',
     password: '',
   });
+  const BASE_URL = 'http://localhost:8080'
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState('');
@@ -52,22 +54,27 @@ const LoginForm: React.FC = () => {
     setServerError('');
     
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(credentials),
+        credentials: 'include',
       });
       
       const data = await response.json();
+
+      console.log(data)
+
       
       if (!response.ok) {
         throw new Error(data.error || 'Failed to login');
       }
-      
+      console.log("before push")
       router.push('/dashboard');
-      router.refresh();
+      console.log("after push")
+      // router.refresh();
       
     } catch (error) {
       console.error('Login error:', error);

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getCurrentUser } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
+
 export const metadata: Metadata = {
   title: 'Dashboard - StockGlide',
   description: 'Your StockGlide dashboard',
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
+  
+  console.log(user)
   
   if (!user) {
     redirect('/auth/login');

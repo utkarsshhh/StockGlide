@@ -1,6 +1,7 @@
 import { db } from './db';
 import { cookies } from 'next/headers';
 import { User, LoginCredentials, RegisterData } from '@/types/user';
+import { validateLogin } from '@/app/api/login';
 
 // For demo purposes only - in a real app, use a proper authentication library
 export async function register(data: RegisterData): Promise<User | null> {
@@ -22,42 +23,67 @@ export async function register(data: RegisterData): Promise<User | null> {
   return userWithoutPassword;
 }
 
-export async function login(credentials: LoginCredentials): Promise<User | null> {
-  const user = await db.getUserByEmail(credentials.email);
+export async function login(credentials: LoginCredentials){
+    try{
+    const user = await validateLogin(credentials)
+    console.log(user)
+    const cookieStore = await cookies();
+  console.log("user ",user)
+//   cookieStore.set('session', user.user_id, { 
+//     httpOnly: true,
+//     secure: process.env.NODE_ENV === 'production',
+//     maxAge: 60 * 60 * 24, // 1 week
+//     path: '/',
+//   });
+//   cookieStore.set('token', user.token, {
+//     httpOnly: true,
+//     path: '/',
+//     maxAge: 60 * 60 * 24, // 1 day
+//     secure: process.env.NODE_ENV === 'production',
+//     sameSite: 'lax',
+//   });
+//   cookieStore.set('user_id', user.user_id.toString(), {
+//     httpOnly: false, // can be read on frontend
+//     path: '/',
+//     maxAge: 60 * 60 * 24,
+//   });
   
-  if (!user || user.password !== credentials.password) {
-    throw new Error('Invalid credentials');
-  }
+  // Remove password before returning user data
+//   const { password, ...userWithoutPassword } = user;
+//   return userWithoutPassword;
+    return user
+    }
+    catch(error){
+        throw new Error('Invalid credentials');
+    }
+
+    
+    
+  
   
   // In a real app, use a proper session management system
   // For demo, we'll set a cookie with the user ID
-  const cookieStore = await cookies();
-  cookieStore.set('session', user.id, { 
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    maxAge: 60 * 60 * 24 * 7, // 1 week
-    path: '/',
-  });
   
-  // Remove password before returning user data
-  const { password, ...userWithoutPassword } = user;
-  return userWithoutPassword;
 }
 
 export async function getCurrentUser(): Promise<User | null> {
-  const cookieStore = await cookies();
-  const sessionCookie = cookieStore.get('session');
-  if (!sessionCookie?.value) return null;
+  const cookieStore =  await cookies();
+
+  const user = cookieStore.get('user_id');
+//   console.log(sessionCookie)
+//   console.log("current user ")
+//   if (!sessionCookie?.value) return null;
   
-  const user = await db.getUserById(sessionCookie.value);
+//   const user = await db.getUserById(sessionCookie.value);
   if (!user) return null;
   
   // Remove password before returning user data
-  const { password, ...userWithoutPassword } = user;
-  return userWithoutPassword;
+//   const { password, ...userWithoutPassword } = user;
+  return user;
 }
 
 export async function logout() {
 const cookieStore = await cookies();
-cookieStore.delete('session');
+cookieStore.delete('token');
+cookieStore.delete('user_id');
 }

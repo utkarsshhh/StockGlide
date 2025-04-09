@@ -8,6 +8,7 @@ import Button from '@/components/ui/Button';
 import { RegisterData } from '@/types/user';
 
 const RegisterForm: React.FC = () => {
+    const BASE_URL = 'http://localhost:8080'
   const router = useRouter();
   const [userData, setUserData] = useState<RegisterData>({
     username: '',
@@ -62,7 +63,7 @@ const RegisterForm: React.FC = () => {
     setServerError('');
     
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${BASE_URL}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

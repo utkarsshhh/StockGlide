@@ -8,6 +8,7 @@ edition = "2024"
 # Web framework
 axum = "0.7.4"
 tokio = { version = "1.36.0", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors"] }
 
 hyper = { version = "0.14", features = ["server"] }
 
