@@ -9,6 +9,7 @@ use argon2::{
 use jsonwebtoken::{encode, Header, EncodingKey};
 use sqlx::PgPool;
 use anyhow::{Result, Context, anyhow};
+use uuid::Uuid;
 
 use crate::models::user::{User, RegisterRequest, LoginRequest};
 
@@ -89,5 +90,20 @@ impl AuthService {
         .context("Failed to generate JWT token")?;
 
         Ok(token)
+    }
+    pub async fn get_profile(pool: &PgPool,request:Uuid) -> Result<User>{
+
+        let user = sqlx::query_as!(
+            User,
+            "SELECT name,email,id FROM users WHERE id = $1",
+            request
+        )
+        .fetch_optional(pool)
+        .await
+        .context("Database error during login")?
+        .ok_or_else(|| anyhow!("User not found"))?;
+
+        Ok(user)
+
     }
 }

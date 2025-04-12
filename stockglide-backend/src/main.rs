@@ -33,8 +33,8 @@ async fn main() -> anyhow::Result<()> {
     let app = Router::new()
         .route("/register", post(handlers::auth::register_handler))
         .route("/api/auth/login", post(handlers::auth::login_handler))
-        .route("/profile", get(handlers::profile::get_profile))
-        .with_state(pool).layer(cors);
+        .route("/profile/:user_id", get(handlers::profile::profile_handler))
+        .with_state(pool.clone()).layer(cors);
 
     // Start server
     let msg = format!("Server running on http://localhost:{}",server_port);

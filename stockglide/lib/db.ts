@@ -1,3 +1,5 @@
+import { getProfile } from "@/app/api/profile";
+
 export const db = {
     users: new Map<string, any>(),
     
@@ -23,7 +25,8 @@ export const db = {
     },
     
     async getUserById(id: string): Promise<any | null> {
-      return this.users.get(id) || null;
+      const user = await getProfile(id)
+      return user
     },
     
     async updateUser(id: string, data: any): Promise<any> {

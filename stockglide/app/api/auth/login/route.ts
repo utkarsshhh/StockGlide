@@ -17,7 +17,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
         httpOnly: true,
         path: '/',
         maxAge: 60 * 60, // 1 hour
-        secure: false,
+        secure: true,
         sameSite: 'lax',
         
       });
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ApiRespon
         httpOnly: true, // can be read on frontend
         path: '/',
         maxAge: 60 * 60,
-        secure: false,
+        secure: true,
         sameSite: 'lax',  //1 hour,
       });
       return res

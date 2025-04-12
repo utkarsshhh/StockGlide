@@ -69,17 +69,22 @@ export async function login(credentials: LoginCredentials){
 export async function getCurrentUser(): Promise<User | null> {
   const cookieStore =  await cookies();
 
-  const user = cookieStore.get('user_id');
-//   console.log(sessionCookie)
+  const sessionCookie = cookieStore.get('user_id');
+  console.log(sessionCookie)
 //   console.log("current user ")
 //   if (!sessionCookie?.value) return null;
-  
-//   const user = await db.getUserById(sessionCookie.value);
+  if (sessionCookie){
+  const user = await db.getUserById(sessionCookie.value);
   if (!user) return null;
+  return user;
+  }
+  else{
+    return null
+  }
   
   // Remove password before returning user data
 //   const { password, ...userWithoutPassword } = user;
-  return user;
+  
 }
 
 export async function logout() {

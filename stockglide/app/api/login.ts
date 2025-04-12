@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost:8080'
 
-export async function validateLogin(creds){
+export async function validateLogin(creds:object){
     const response = await fetch(`${BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
