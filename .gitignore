@@ -1,3 +1,4 @@
 stockglide-backend/.env
 stockglide/node_modules
 stockglide-backend/target
+stockglide/.next
