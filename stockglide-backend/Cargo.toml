@@ -1,0 +1,47 @@
+# Cargo.toml
+[package]
+name = "stockglide-backend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Web framework
+axum = "0.7.4"
+tokio = { version = "1.36.0", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors"] }
+
+hyper = { version = "0.14", features = ["server"] }
+
+# Database and ORM
+sqlx = { version = "0.7.3", features = [
+    "runtime-tokio",
+    "postgres", 
+    "migrate", 
+    "uuid", 
+    "chrono"
+] }
+dotenvy = "0.15.7"
+
+# Authentication and security
+argon2 = "0.5.2"
+jsonwebtoken = "9.2.0"
+uuid = { version = "1.7.0", features = ["serde"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+
+# Validation
+validator = { version = "0.16.1", features = ["derive"] }
+
+# Logging
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+
+# Error handling
+thiserror = "1.0.57"
+anyhow = "1.0.80"
+chrono = { version = "0.4.34", features = ["serde"] }
+
+[dev-dependencies]
+tower = { version = "0.4.13", features = ["tokio"] }
+
+chrono = { version = "0.4.34", features = ["serde"] }
