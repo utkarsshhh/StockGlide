@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getCurrentUser } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import ProfileDisplay from '@/components/profile/ProfileDisplay';
+import Header from '@/components/layout/Header';
 
 export const metadata: Metadata = {
   title: 'Profile - StockGlide',
@@ -16,9 +17,13 @@ export default async function ProfilePage() {
   }
   
   return (
+    
+    
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Your Profile</h1>
+      
+      
       <ProfileDisplay user={user} />
     </div>
+    
   );
 }

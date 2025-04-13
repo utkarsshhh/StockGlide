@@ -5,11 +5,42 @@ import { User } from '@/types/user';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import { formatDate } from '@/lib/utils';
+import Header from '../layout/Header';
+import Link from 'next/link';
 
 interface ProfileDisplayProps {
   user: User;
 }
+import { 
+  BarChart3, 
+  LineChart, 
+  List, 
+  Clock, 
+  Briefcase, 
+  Eye, 
+  ArrowUp, 
+  ArrowDown,
+  Menu,
+  Bell,
+  Search,
+  User
+} from 'lucide-react';
 
+function NavLink({ href, icon, active, children }) {
+  return (
+    <Link
+      href={href}
+      className={`flex items-center px-3 py-2 text-sm font-medium rounded-md ${
+        active 
+          ? 'bg-blue-50 text-blue-700' 
+          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+      }`}
+    >
+      <span className="mr-3">{icon}</span>
+      {children}
+    </Link>
+  );
+}
 const ProfileDisplay: React.FC<ProfileDisplayProps> = ({ user }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({
@@ -86,6 +117,48 @@ const ProfileDisplay: React.FC<ProfileDisplayProps> = ({ user }) => {
   };
   
   return (
+    <div className="flex h-screen bg-gray-50">
+      <div className="hidden md:flex flex-col w-64 bg-white border-r">
+        <div className="px-6 py-4 border-b">
+          <h1 className="text-xl font-bold text-blue-600">StockGlide</h1>
+        </div>
+        <nav className="flex-1 px-4 py-6">
+          <div className="space-y-1">
+            <NavLink href="/dashboard" icon={<BarChart3 size={20} />} active>
+              Dashboard
+            </NavLink>
+            <NavLink href="/portfolios" icon={<Briefcase size={20} />}>
+              Portfolios
+            </NavLink>
+            <NavLink href="/watchlists" icon={<Eye size={20} />}>
+              Watchlists
+            </NavLink>
+            <NavLink href="/transactions" icon={<Clock size={20} />}>
+              Transactions
+            </NavLink>
+            <NavLink href="/discover" icon={<Search size={20} />}>
+              Discover
+            </NavLink>
+          </div>
+        </nav>
+        <div className="px-6 py-4 border-t">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                <User size={16} className="text-blue-600" />
+              </div>
+            </div>
+            <div className="ml-3">
+              <p className="text-sm font-medium">{user.name || user.username}</p>
+              <Link href="/settings" className="text-xs text-gray-500 hover:text-gray-700">
+                Settings
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1 flex flex-col overflow-hidden">
+    <Header user={user} />
     <div className="bg-white shadow overflow-hidden sm:rounded-lg">
       <div className="px-4 py-5 sm:px-6 flex justify-between items-center">
         <div>
@@ -231,12 +304,14 @@ const ProfileDisplay: React.FC<ProfileDisplayProps> = ({ user }) => {
                 Member since
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                {formatDate(user.createdAt)}
+                {formatDate(user.created_at)}
               </dd>
             </div>
           </dl>
         </div>
       )}
+    </div>
+    </div>
     </div>
   );
 };
